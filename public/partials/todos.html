@@ -1,6 +1,9 @@
 <div>
     <h2>Hello Todos From Angular</h2>
     <div ng-repeat="todo in todos">
-        <span>{{todo.name}}</span>
+        <span ng-click="$parent.selected = todo;">{{todo.name}}</span>
     </div>
+    <input ng-model="newTodo">
+    <button ng-click="addTodo(newTodo)">Add {{ newTodo }}</button>
+    <button ng-click="delete()">Remove {{ selected.name }}</button>
 </div>
