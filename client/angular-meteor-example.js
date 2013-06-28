@@ -1,12 +1,13 @@
 
 
-var app = angular.module('meteorapp', ['meteor']).config(['$routeProvider', function ($routeProvider) {
+var app = angular.module('meteorapp', ['meteor']);
+
+app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/todos', {templateUrl: 'partials/todos.html', controller: 'TodosCtrl'})
         .when('/parties', {templateUrl: 'partials/parties.html', controller: 'PartyCtrl'})
     ;
 }]);
-
 
 app.controller('MainCtrl', ['$scope', '$meteor', function ($scope, $meteor) {
     $scope.mainMessage = "Main Controller scope message";
