@@ -3,3 +3,8 @@
     cursor: pointer;
     color: green;
 }
+
+.done-true {
+    text-decoration: line-through;
+    color: grey;
+}

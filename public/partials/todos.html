@@ -1,9 +1,11 @@
 <div>
     <h2>Hello Todos From Angular</h2>
-    <div ng-repeat="todo in todos">
-        <span class="list" ng-click="$parent.selected = todo;">{{todo.name}}</span>
-    </div>
+    <span>{{remaining()}} of {{todos.length}} remaining</span>
+    <li ng-repeat="todo in todos">
+        <input type="checkbox" ng-model="todo.done">
+        <span class="done-{{todo.done}}" ng-click="$parent.selected = todo;">{{todo.name}}</span>
+    </li>
     <input ng-model="newTodo">
-    <button ng-click="addTodo(newTodo)">Add {{ newTodo }}</button>
+    <button ng-click="addTodo()">Add {{ newTodo }}</button>
     <button ng-click="delete()">Remove {{ selected.name }}</button>
 </div>

@@ -19,12 +19,21 @@ app.controller('TodosCtrl', ['$scope', '$meteor', function ($scope, $meteor) {
     $scope.Todos = $meteor("todos");
     $scope.todos = $meteor("todos").find({});
 
-    $scope.addTodo = function (newTodo) {
-        $scope.Todos.insert({name: newTodo});
+    $scope.addTodo = function () {
+        $scope.Todos.insert({name: $scope.newTodo, done: false});
+        $scope.newTodo = '';
     };
 
     $scope.delete = function () {
         $scope.Todos.remove($scope.selected._id);
+    };
+
+    $scope.remaining = function() {
+        var count = 0;
+        angular.forEach($scope.todos, function(todo) {
+            count += todo.done ? 0 : 1;
+        });
+        return count;
     };
 }]);
 
