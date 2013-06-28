@@ -1,12 +1,13 @@
-<div xmlns="http://www.w3.org/1999/html">
+<div ng-controller="MainCtrl">
     <span>Calc Test {{301*23}}</span>
-    </br>
+    <br/>
+    {{ mainMessage }}
+    <br/>
+    <a href="#/">Home</a>
+    <br/>
     <a href="#/todos">todos</a>
-    </br>
+    <br/>
     <a href="#/parties">parties</a>
-    </br>
-    <div ng-controller="MainCtrl">
-        {{ mainMessage }}
-        <div ng-view></div>
-    </div>
+    <br/>
+    <div ng-view></div>
 </div>
