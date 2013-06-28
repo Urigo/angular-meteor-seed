@@ -3,9 +3,9 @@
     <span>{{remaining()}} of {{todos.length}} remaining</span>
     <li ng-repeat="todo in todos">
         <input type="checkbox" ng-model="todo.done">
-        <span class="done-{{todo.done}}" ng-click="$parent.selected = todo;">{{todo.name}}</span>
+        <span class="done-{{todo.done}}">{{todo.name}}</span>
     </li>
     <input ng-model="newTodo">
     <button ng-click="addTodo()">Add {{ newTodo }}</button>
-    <button ng-click="delete()">Remove {{ selected.name }}</button>
+    <button ng-click="archive()">Remove done ones</button>
 </div>

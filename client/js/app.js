@@ -24,8 +24,13 @@ app.controller('TodosCtrl', ['$scope', '$meteor', function ($scope, $meteor) {
         $scope.newTodo = '';
     };
 
-    $scope.delete = function () {
-        $scope.Todos.remove($scope.selected._id);
+    $scope.archive = function() {
+        angular.forEach($scope.todos, function(todo) {
+            if (todo.done){
+                console.log(todo);
+                $scope.Todos.remove(todo._id);
+            }
+        });
     };
 
     $scope.remaining = function() {
@@ -35,6 +40,7 @@ app.controller('TodosCtrl', ['$scope', '$meteor', function ($scope, $meteor) {
         });
         return count;
     };
+
 }]);
 
 app.controller('PartyCtrl', ['$scope', '$meteor', function ($scope, $meteor) {
