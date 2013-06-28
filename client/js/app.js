@@ -5,6 +5,7 @@ var app = angular.module('meteorapp', ['meteor']);
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/todos', {templateUrl: 'partials/todos.html', controller: 'TodosCtrl'})
+        .when('/editTodo/:todo_id', {templateUrl: 'partials/editTodo.html', controller: 'EditTodoCtrl'})
         .when('/parties', {templateUrl: 'partials/parties.html', controller: 'PartyCtrl'})
     ;
 }]);
@@ -41,6 +42,22 @@ app.controller('TodosCtrl', ['$scope', '$meteor', function ($scope, $meteor) {
         return count;
     };
 
+}]);
+
+app.controller('EditTodoCtrl', ['$scope', '$meteor', '$routeParams', '$location',
+    function ($scope, $meteor, $routeParams, $location) {
+    $scope.todos = $meteor("todos");
+    $scope.todo = $scope.todos.findOne($routeParams.todo_id);
+
+    $scope.destroy = function() {
+        $scope.todos.remove($scope.todo._id);
+        $location.path('/todos');
+    };
+
+    $scope.save = function() {
+        $scope.todos.update($scope.todo._id, {name: $scope.todo.name});
+        $location.path('/todos');
+    };
 }]);
 
 app.controller('PartyCtrl', ['$scope', '$meteor', function ($scope, $meteor) {
