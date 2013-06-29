@@ -4,6 +4,8 @@ angular-meteor-seed
 Seed app for AngularJS and meteor.
 Based on angular - meteor - example by tom-muhm but trying to create a better folder structure.
 
+Working copy:  http://angular-meteor-seed.meteor.com/
+
 ### Setup
 
 clone the repositry
