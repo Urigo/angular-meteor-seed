@@ -4,11 +4,11 @@
 
     <input type="text" ng-model="search" class="search-query" placeholder="Search">
     <br/>
-    <ul>
+    <ul class="unstyled">
         <li ng-repeat="todo in todos | filter:search">
             <input type="checkbox" ng-model="todo.done">
             <span class="done-{{todo.done}}">{{todo.name}}</span>
-            <a href="#/editTodo/{{todo._id}}">Edit</a>
+            <a href="#/editTodo/{{todo._id}}"><i class="icon-pencil"></i></a>
         </li>
     </ul>
     <input ng-model="newTodo">

@@ -1,13 +1,27 @@
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- Be sure to leave the brand out there if you want it shown -->
+            <a class="brand" href="#">Angular-Meteor-Seed</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#/todos">Todos</a></li>
+                    <li><a href="#/parties">Parties</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div ng-controller="MainCtrl">
     <span>Calc Test {{301*23}}</span>
     <br/>
     {{ mainMessage }}
-    <br/>
-    <a href="#/">Home</a>
-    <br/>
-    <a href="#/todos">todos</a>
-    <br/>
-    <a href="#/parties">parties</a>
-    <br/>
     <div ng-view></div>
 </div>
