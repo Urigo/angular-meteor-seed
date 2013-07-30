@@ -1,8 +1,12 @@
 <div>
     <h2>Hello parties From Angular</h2>
-    <div ng-repeat="party in parties">
+    <div ng-repeat-start="party in parties">
         <span class="list">{{party.name}}</span>
     </div>
+    <div ng-repeat-end>
+        party {{ party.name }}la la
+    </div>
+    <button ng-click="loadDirections()">Get Directions</button>
 
     <h4>Click to add a marker!</h4>
     <p>{{zoomMessage}}</p>
@@ -14,9 +18,16 @@
 
     <!-- this is the confusing part. we have to point the map marker directive
       at an existing google.maps.Marker object, so it can hook up events -->
+    <!--
     <div ng-repeat="marker in myMarkers" ui-map-marker="myMarkers[$index]"
          ui-event="{'map-click': 'openMarkerInfo(marker)'}">
     </div>
+    -->
+
+    <div ng-repeat="marker in myMarkers" ui-map-polyline="polyline">
+    </div>
+
+
 
     <div ui-map-info-window="myInfoWindow">
         <h1>Marker</h1>
