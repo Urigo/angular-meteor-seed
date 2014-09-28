@@ -1,6 +1,8 @@
 angular-meteor-seed
 ===================
 
+# Deprecated - Official Angular-Meteor library here:  [https://github.com/Urigo/ngmeteor](https://github.com/Urigo/ngmeteor)
+
 Seed app for AngularJS and meteor.
 Based on angular - meteor - example by tom-muhm but trying to create a better folder structure.
 
